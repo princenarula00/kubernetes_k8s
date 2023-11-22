@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cmd-arg-pod
+spec:
+  containers:
+    - name: mycon
+      image: httpd
+      ports:
+        - containerPort: 80
+      command: ["/bin/sh"]
+      args: ["-c","while true; do echo hello; sleep 20; done"]

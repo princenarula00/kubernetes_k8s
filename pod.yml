@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  nodeName: workernode3
+  containers:
+    - name: mycontainer
+      image: nginx

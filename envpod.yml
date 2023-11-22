@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: envpod
+spec:
+  containers:
+    - name: env-container
+      image: httpd
+      env:
+        - name: FIRST
+          value: "my name"
+        - name: SECOND
+          value: "is"
+        - name: THIRD
+          value: "prince narula"
+        - name: OUTPUTMSG
+          value: "$(FIRST) $(SECOND) $(THIRD)"
+      command: ["echo"]
+      args: ["$(OUTPUTMSG)"]
