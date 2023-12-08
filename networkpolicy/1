@@ -1,0 +1,12 @@
+# nginx-pod-c.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-c
+labels:
+  app: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:alpine
+

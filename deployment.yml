@@ -18,3 +18,5 @@ spec:
           image: princenarula00/gymwork
           ports:
             - containerPort: 80
+        - name: web
+          image: nginx

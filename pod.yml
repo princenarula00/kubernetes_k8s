@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: mypod
 spec:
-  nodeName: workernode3
+  automountServiceAccountToken: false
   containers:
     - name: mycontainer
       image: nginx

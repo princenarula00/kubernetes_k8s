@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: storage-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      name: storage-pod
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: app
+          image: centos
+          command: ["/bin/bash"]
+          args: ["-c","while true; do echo $(date -u) >> /data/out.txt; sleep5; done"]
+          volumeMounts:
+            - mountPath: /data
+              name: persistent-storage
+      volumes:
+        - name: persistent-storage
+          persistentVolumeClaim:
+            claimName: aws-ebs-cliam

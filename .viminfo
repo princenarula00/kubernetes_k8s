@@ -10,24 +10,39 @@
 
 # hlsearch on (H) or off (h):
 ~h
+# Last Search Pattern:
+~MSle0~/shoaibqureshi.online
+
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
+:q
+|2,0,1701696162,,"q"
+:wq
+|2,0,1701696141,,"wq"
 :q!
-|2,0,1700644276,,"q!"
+|2,0,1701687675,,"q!"
 :wq!
-|2,0,1700642668,,"wq!"
-:%d
-|2,0,1700639562,,"%d"
-:q1
-|2,0,1700560076,,"q1"
+|2,0,1701686165,,"wq!"
 :wq1
-|2,0,1700291814,,"wq1"
+|2,0,1701490923,,"wq1"
+:se nu
+|2,0,1701490906,,"se nu"
+: senu
+|2,0,1701490901,," senu"
+:q1
+|2,0,1701169066,,"q1"
+:Wq!
+|2,0,1701087358,,"Wq!"
+:%d
+|2,0,1701085119,,"%d"
 
 # Search String History (newest to oldest):
+?/shoaibqureshi.online
+|2,1,1701682668,47,"shoaibqureshi.online"
 ? @$
-|2,1,1700137764,,"@$"
+|2,1,1700720559,,"@$"
 
 # Expression History (newest to oldest):
 
@@ -37,41 +52,6 @@ $
 
 # Registers:
 "0	LINE	0
-	apiVersion: v1
-	kind: Pod
-	metadata:
-	  creationTimestamp: null
-	  labels:
-	    component: custom-scheduler
-	  name: custom-scheduler
-	  namespace: kube-system
-	spec:
-	  containers:
-	  name: mycontainer
-	  - command:
-	    - kube-scheduler
-	    - --authentication-kubeconfig=/etc/kubernetes/scheduler.conf
-	    - --authorization-kubeconfig=/etc/kubernetes/scheduler.conf
-	    - --bind-address=127.0.0.1
-	    - --kubeconfig=/etc/kubernetes/scheduler.conf
-	    - --leader-elect=true
-	    - --port=0
-	    image: k8s.gcr.io/kube-scheduler:v1.19.4
-	    volumeMounts:
-	    - mountPath: /etc/kubernetes/scheduler.conf
-	      name: kubeconfig
-	      readOnly: true
-	  hostNetwork: true
-	  priorityClassName: system-node-critical
-	  volumes:
-	  - hostPath:
-	      path: /etc/kubernetes/scheduler.conf
-	      type: FileOrCreate
-	    name: kubeconfig
-	status: {}
-|3,0,0,1,32,0,1700137764,"apiVersion: v1","kind: Pod","metadata:","  creationTimestamp: null","  labels:","    component: custom-scheduler","  name: custom-scheduler","  namespace: kube-system","spec:","  containers:","  name: mycontainer","  - command:","    - kube-scheduler","    - --authentication-kubeconfig=/etc/kubernetes/scheduler.conf","    - --authorization-kubeconfig=/etc/kubernetes/scheduler.conf","    - --bind-address=127.0.0.1",>51
-|<"    - --kubeconfig=/etc/kubernetes/scheduler.conf","    - --leader-elect=true","    - --port=0","    image: k8s.gcr.io/kube-scheduler:v1.19.4","    volumeMounts:","    - mountPath: /etc/kubernetes/scheduler.conf","      name: kubeconfig","      readOnly: true","  hostNetwork: true","  priorityClassName: system-node-critical","  volumes:","  - hostPath:","      path: /etc/kubernetes/scheduler.conf","      type: FileOrCreate","    name: kubeconfig","status: {}"
-""1	LINE	0
 	apiVersion: apps/v1
 	kind: Deployment
 	metadata:
@@ -90,434 +70,924 @@ $
 	      - name: example-container
 	        image: nginx
 	
-|3,1,1,1,18,0,1700639562,"apiVersion: apps/v1","kind: Deployment","metadata:","  name: example-deployment","spec:","  replicas: 3","  selector:","    matchLabels:","      app: example-app","  template:","    metadata:","      labels:","        app: example-app","    spec:","      containers:","      - name: example-container","        image: nginx",""
+|3,0,0,1,18,0,1700720559,"apiVersion: apps/v1","kind: Deployment","metadata:","  name: example-deployment","spec:","  replicas: 3","  selector:","    matchLabels:","      app: example-app","  template:","    metadata:","      labels:","        app: example-app","    spec:","      containers:","      - name: example-container","        image: nginx",""
+""1	LINE	0
+	              number: 80
+|3,1,1,1,1,0,1701694414,"              number: 80"
 "2	LINE	0
-	apiVersion: autoscaling.k8s.io/v1
-	kind: VerticalPodAutoscaler
-	metadata:
-	  name: example-vpa
-	spec:
-	  targetRef:
-	    apiVersion: "apps/v1"
-	    kind: Deployment
-	    name: example-deployment
-	  updatePolicy:
-	    updateMode: "Off"
-|3,0,2,1,11,0,1700639478,"apiVersion: autoscaling.k8s.io/v1","kind: VerticalPodAutoscaler","metadata:","  name: example-vpa","spec:","  targetRef:","    apiVersion: \"apps/v1\"","    kind: Deployment","    name: example-deployment","  updatePolicy:","    updateMode: \"Off\""
+	            port:
+|3,0,2,1,1,0,1701694413,"            port:"
 "3	LINE	0
-	apiVersion: apps/v1
-	kind: Deployment
-	metadata:
-	  name: my-rec-deployment
-	spec:
-	  replicas: 2
-	  template:
-	    metadata:
-	      labels:
-	        app: my-rec-deployment
-	    spec:
-	      containers:
-	        - name: my-rec-container
-	          image: nginx
-|3,0,3,1,14,0,1700636733,"apiVersion: apps/v1","kind: Deployment","metadata:","  name: my-rec-deployment","spec:","  replicas: 2","  template:","    metadata:","      labels:","        app: my-rec-deployment","    spec:","      containers:","        - name: my-rec-container","          image: nginx"
+	            name: prince-deploy
+|3,0,3,1,1,0,1701694413,"            name: prince-deploy"
 "4	LINE	0
-	apiVersion: autoscaling.k8s.io/v1beta2
-	kind: VerticalPodAutoscaler
-	metadata:
-	  name: my-rec-vpa
-	spec:
-	  targetRef:
-	    apiVersion: "apps/v1"
-	    kind: Deployment
-	    name: my-rec-deployment
-	  updatePolicy:
-	    updateMode: "Off"
-|3,0,4,1,11,0,1700636674,"apiVersion: autoscaling.k8s.io/v1beta2","kind: VerticalPodAutoscaler","metadata:","  name: my-rec-vpa","spec:","  targetRef:","    apiVersion: \"apps/v1\"","    kind: Deployment","    name: my-rec-deployment","  updatePolicy:","    updateMode: \"Off\""
+	          service:
+|3,0,4,1,1,0,1701694412,"          service:"
 "5	LINE	0
-	apiVersion: v1
-	kind: Pod
-	metadata:
-	  creationTimestamp: null
-	  labels:
-	    component: custom-scheduler
-	  name: custom-scheduler
-	  namespace: kube-system
-	spec:
-	  containers:
-	  name: mycontainer
-	  - command:
-	    - kube-scheduler
-	    - --authentication-kubeconfig=/etc/kubernetes/scheduler.conf
-	    - --authorization-kubeconfig=/etc/kubernetes/scheduler.conf
-	    - --bind-address=127.0.0.1
-	    - --kubeconfig=/etc/kubernetes/scheduler.conf
-	    - --leader-elect=true
-	    - --port=0
-	    image: k8s.gcr.io/kube-scheduler:v1.19.4
-	    volumeMounts:
-	    - mountPath: /etc/kubernetes/scheduler.conf
-	      name: kubeconfig
-	      readOnly: true
-	  hostNetwork: true
-	  priorityClassName: system-node-critical
-	  volumes:
-	  - hostPath:
-	      path: /etc/kubernetes/scheduler.conf
-	      type: FileOrCreate
-	    name: kubeconfig
-	status: {}
-|3,0,5,1,32,0,1700137720,"apiVersion: v1","kind: Pod","metadata:","  creationTimestamp: null","  labels:","    component: custom-scheduler","  name: custom-scheduler","  namespace: kube-system","spec:","  containers:","  name: mycontainer","  - command:","    - kube-scheduler","    - --authentication-kubeconfig=/etc/kubernetes/scheduler.conf","    - --authorization-kubeconfig=/etc/kubernetes/scheduler.conf","    - --bind-address=127.0.0.1",>51
-|<"    - --kubeconfig=/etc/kubernetes/scheduler.conf","    - --leader-elect=true","    - --port=0","    image: k8s.gcr.io/kube-scheduler:v1.19.4","    volumeMounts:","    - mountPath: /etc/kubernetes/scheduler.conf","      name: kubeconfig","      readOnly: true","  hostNetwork: true","  priorityClassName: system-node-critical","  volumes:","  - hostPath:","      path: /etc/kubernetes/scheduler.conf","      type: FileOrCreate","    name: kubeconfig","status: {}"
+	        backend:
+|3,0,5,1,1,0,1701694412,"        backend:"
 "6	LINE	0
-	apiVersion: v1
-	kind: Pod
-	metadata:
-	  creationTimestamp: null
-	  labels:
-	    component: custom-scheduler
-	  name: custom-scheduler
-	  namespace: kube-system
-	spec:
-	  containers:
-	  name: mycontainer
-	  - command:
-	    - kube-scheduler
-	    - --authentication-kubeconfig=/etc/kubernetes/scheduler.conf
-	    - --authorization-kubeconfig=/etc/kubernetes/scheduler.conf
-	    - --bind-address=127.0.0.1
-	    - --kubeconfig=/etc/kubernetes/scheduler.conf
-	    - --leader-elect=true
-	    - --port=0
-	    image: k8s.gcr.io/kube-scheduler:v1.19.4
-	    volumeMounts:
-	    - mountPath: /etc/kubernetes/scheduler.conf
-	      name: kubeconfig
-	      readOnly: true
-	  hostNetwork: true
-	  priorityClassName: system-node-critical
-	  volumes:
-	  - hostPath:
-	      path: /etc/kubernetes/scheduler.conf
-	      type: FileOrCreate
-	    name: kubeconfig
-	status: {}
-|3,0,6,1,32,0,1700137720,"apiVersion: v1","kind: Pod","metadata:","  creationTimestamp: null","  labels:","    component: custom-scheduler","  name: custom-scheduler","  namespace: kube-system","spec:","  containers:","  name: mycontainer","  - command:","    - kube-scheduler","    - --authentication-kubeconfig=/etc/kubernetes/scheduler.conf","    - --authorization-kubeconfig=/etc/kubernetes/scheduler.conf","    - --bind-address=127.0.0.1",>51
-|<"    - --kubeconfig=/etc/kubernetes/scheduler.conf","    - --leader-elect=true","    - --port=0","    image: k8s.gcr.io/kube-scheduler:v1.19.4","    volumeMounts:","    - mountPath: /etc/kubernetes/scheduler.conf","      name: kubeconfig","      readOnly: true","  hostNetwork: true","  priorityClassName: system-node-critical","  volumes:","  - hostPath:","      path: /etc/kubernetes/scheduler.conf","      type: FileOrCreate","    name: kubeconfig","status: {}"
+	        path: /prince
+|3,0,6,1,1,0,1701694411,"        path: /prince"
 "7	LINE	0
-	apiVersion: v1
-	kind: Pod
-	metadata:
-	  creationTimestamp: null
-	  labels:
-	    component: custom-scheduler
-	  name: custom-scheduler
-	  namespace: kube-system
-	spec:
-	  containers:
-	  name: mycontainer
-	  - command:
-	    - kube-scheduler
-	    - --authentication-kubeconfig=/etc/kubernetes/scheduler.conf
-	    - --authorization-kubeconfig=/etc/kubernetes/scheduler.conf
-	    - --bind-address=127.0.0.1
-	    - --kubeconfig=/etc/kubernetes/scheduler.conf
-	    - --leader-elect=true
-	    - --port=0
-	    image: k8s.gcr.io/kube-scheduler:v1.19.4
-	    volumeMounts:
-	    - mountPath: /etc/kubernetes/scheduler.conf
-	      name: kubeconfig
-	      readOnly: true
-	  hostNetwork: true
-	  priorityClassName: system-node-critical
-	  volumes:
-	  - hostPath:
-	      path: /etc/kubernetes/scheduler.conf
-	      type: FileOrCreate
-	    name: kubeconfig
-	status: {}
-|3,0,7,1,32,0,1700137720,"apiVersion: v1","kind: Pod","metadata:","  creationTimestamp: null","  labels:","    component: custom-scheduler","  name: custom-scheduler","  namespace: kube-system","spec:","  containers:","  name: mycontainer","  - command:","    - kube-scheduler","    - --authentication-kubeconfig=/etc/kubernetes/scheduler.conf","    - --authorization-kubeconfig=/etc/kubernetes/scheduler.conf","    - --bind-address=127.0.0.1",>51
-|<"    - --kubeconfig=/etc/kubernetes/scheduler.conf","    - --leader-elect=true","    - --port=0","    image: k8s.gcr.io/kube-scheduler:v1.19.4","    volumeMounts:","    - mountPath: /etc/kubernetes/scheduler.conf","      name: kubeconfig","      readOnly: true","  hostNetwork: true","  priorityClassName: system-node-critical","  volumes:","  - hostPath:","      path: /etc/kubernetes/scheduler.conf","      type: FileOrCreate","    name: kubeconfig","status: {}"
+	      - pathType: Prefix
+|3,0,7,1,1,0,1701694411,"      - pathType: Prefix"
 "8	LINE	0
-	apiVersion: v1
-	kind: Pod
-	metadata:
-	  creationTimestamp: null
-	  labels:
-	    component: kube-scheduler
-	    tier: control-plane
-	  name: my-scheduler
-	spec:
-	  containers:
-	  - command:
-	    - kube-scheduler
-	    - --authentication-kubeconfig=/etc/kubernetes/scheduler.conf
-	    - --authorization-kubeconfig=/etc/kubernetes/scheduler.conf
-	    - --bind-address=127.0.0.1
-	    - --kubeconfig=/etc/kubernetes/scheduler.conf
-	    - --leader-elect=false
-	    - --scheduler-name=my-scheduler
-	    - --port= 10282
-	    - --secure-port=0
-	    image: registry.k8s.io/kube-scheduler:v1.28.4
-	    imagePullPolicy: IfNotPresent
-	    livenessProbe:
-	      failureThreshold: 8
-	      httpGet:
-	        host: 127.0.0.1
-	        path: /healthz
-	        port: 10282
-	        scheme: HTTPS
-	      initialDelaySeconds: 10
-	      periodSeconds: 10
-	      timeoutSeconds: 15
-	    name: kube-scheduler
-	    resources:
-	      requests:
-	        cpu: 100m
-	    startupProbe:
-	      failureThreshold: 24
-	      httpGet:
-	        host: 127.0.0.1
-	        path: /healthz
-	        port: 10259
-	        scheme: HTTPS
-	      initialDelaySeconds: 10
-	      periodSeconds: 10
-	      timeoutSeconds: 15
-	    volumeMounts:
-	    - mountPath: /etc/kubernetes/scheduler.conf
-	      name: kubeconfig
-	      readOnly: true
-|3,0,8,1,50,0,1700137540,"apiVersion: v1","kind: Pod","metadata:","  creationTimestamp: null","  labels:","    component: kube-scheduler","    tier: control-plane","  name: my-scheduler","spec:","  containers:","  - command:","    - kube-scheduler","    - --authentication-kubeconfig=/etc/kubernetes/scheduler.conf","    - --authorization-kubeconfig=/etc/kubernetes/scheduler.conf","    - --bind-address=127.0.0.1",>51
-|<"    - --kubeconfig=/etc/kubernetes/scheduler.conf","    - --leader-elect=false","    - --scheduler-name=my-scheduler","    - --port= 10282","    - --secure-port=0","    image: registry.k8s.io/kube-scheduler:v1.28.4","    imagePullPolicy: IfNotPresent","    livenessProbe:","      failureThreshold: 8","      httpGet:","        host: 127.0.0.1","        path: /healthz","        port: 10282","        scheme: HTTPS","      initialDelaySeconds: 10","      periodSeconds: 10",>26
-|<"      timeoutSeconds: 15","    name: kube-scheduler","    resources:","      requests:","        cpu: 100m","    startupProbe:","      failureThreshold: 24","      httpGet:","        host: 127.0.0.1","        path: /healthz","        port: 10259","        scheme: HTTPS","      initialDelaySeconds: 10","      periodSeconds: 10","      timeoutSeconds: 15","    volumeMounts:","    - mountPath: /etc/kubernetes/scheduler.conf","      name: kubeconfig","      readOnly: true"
+	      paths:
+|3,0,8,1,1,0,1701694411,"      paths:"
+"9	LINE	0
+	    http:
+|3,0,9,1,1,0,1701694410,"    http:"
+"-	CHAR	0
+	:
+|3,0,36,0,1,0,1701254200,":"
 
 # File marks:
-'0  23  69  ~/vpa/deployment.yml
-|4,48,23,69,1700644276,"~/vpa/deployment.yml"
-'1  11  21  ~/vpa/vpa.yml
-|4,49,11,21,1700644265,"~/vpa/vpa.yml"
-'2  23  69  ~/vpa/deployment.yml
-|4,50,23,69,1700643329,"~/vpa/deployment.yml"
-'3  11  21  ~/vpa/vpa.yml
-|4,51,11,21,1700643203,"~/vpa/vpa.yml"
-'4  11  21  ~/vpa/vpa.yml
-|4,52,11,21,1700643146,"~/vpa/vpa.yml"
-'5  11  21  ~/vpa/vpa.yml
-|4,53,11,21,1700643146,"~/vpa/vpa.yml"
-'6  23  69  ~/vpa/deployment.yml
-|4,54,23,69,1700643029,"~/vpa/deployment.yml"
-'7  23  69  ~/vpa/deployment.yml
-|4,55,23,69,1700643029,"~/vpa/deployment.yml"
-'8  23  69  ~/vpa/deployment.yml
-|4,56,23,69,1700642668,"~/vpa/deployment.yml"
-'9  23  69  ~/vpa/deployment.yml
-|4,57,23,69,1700642668,"~/vpa/deployment.yml"
+'0  6  25  ~/ingress/ingress.yaml
+|4,48,6,25,1701697180,"~/ingress/ingress.yaml"
+'1  6  24  ~/ingress/ingress.yaml
+|4,49,6,24,1701696162,"~/ingress/ingress.yaml"
+'2  6  24  ~/ingress/ingress.yaml
+|4,50,6,24,1701696141,"~/ingress/ingress.yaml"
+'3  6  24  ~/ingress/ingress.yaml
+|4,51,6,24,1701696141,"~/ingress/ingress.yaml"
+'4  27  23  ~/ingress/ingress.yaml
+|4,52,27,23,1701695168,"~/ingress/ingress.yaml"
+'5  26  23  ~/ingress/ingress.yaml
+|4,53,26,23,1701695168,"~/ingress/ingress.yaml"
+'6  27  23  ~/ingress/ingress.yaml
+|4,54,27,23,1701695168,"~/ingress/ingress.yaml"
+'7  26  23  ~/ingress/ingress.yaml
+|4,55,26,23,1701695168,"~/ingress/ingress.yaml"
+'8  27  23  ~/ingress/ingress.yaml
+|4,56,27,23,1701695168,"~/ingress/ingress.yaml"
+'9  26  23  ~/ingress/ingress.yaml
+|4,57,26,23,1701695168,"~/ingress/ingress.yaml"
 
 # Jumplist (newest first):
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700644276,"~/vpa/deployment.yml"
--'  11  21  ~/vpa/vpa.yml
-|4,39,11,21,1700644265,"~/vpa/vpa.yml"
--'  11  21  ~/vpa/vpa.yml
-|4,39,11,21,1700644265,"~/vpa/vpa.yml"
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700643329,"~/vpa/deployment.yml"
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700643329,"~/vpa/deployment.yml"
--'  11  21  ~/vpa/vpa.yml
-|4,39,11,21,1700643203,"~/vpa/vpa.yml"
--'  11  21  ~/vpa/vpa.yml
-|4,39,11,21,1700643203,"~/vpa/vpa.yml"
--'  11  21  ~/vpa/vpa.yml
-|4,39,11,21,1700643203,"~/vpa/vpa.yml"
--'  11  21  ~/vpa/vpa.yml
-|4,39,11,21,1700643203,"~/vpa/vpa.yml"
--'  11  21  ~/vpa/vpa.yml
-|4,39,11,21,1700643146,"~/vpa/vpa.yml"
--'  11  21  ~/vpa/vpa.yml
-|4,39,11,21,1700643146,"~/vpa/vpa.yml"
--'  11  21  ~/vpa/vpa.yml
-|4,39,11,21,1700643146,"~/vpa/vpa.yml"
--'  11  21  ~/vpa/vpa.yml
-|4,39,11,21,1700643146,"~/vpa/vpa.yml"
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700643029,"~/vpa/deployment.yml"
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700643029,"~/vpa/deployment.yml"
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700643029,"~/vpa/deployment.yml"
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700643029,"~/vpa/deployment.yml"
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700643029,"~/vpa/deployment.yml"
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700643029,"~/vpa/deployment.yml"
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700643029,"~/vpa/deployment.yml"
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700643029,"~/vpa/deployment.yml"
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700642668,"~/vpa/deployment.yml"
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700642668,"~/vpa/deployment.yml"
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700642668,"~/vpa/deployment.yml"
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700642668,"~/vpa/deployment.yml"
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700642668,"~/vpa/deployment.yml"
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700642668,"~/vpa/deployment.yml"
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700642668,"~/vpa/deployment.yml"
--'  23  69  ~/vpa/deployment.yml
-|4,39,23,69,1700642668,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  21  92  ~/vpa/deployment.yml
-|4,39,21,92,1700642317,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700642124,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700639789,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700639789,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700639789,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700639789,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700639789,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700639789,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700639789,"~/vpa/deployment.yml"
--'  24  26  ~/vpa/deployment.yml
-|4,39,24,26,1700639789,"~/vpa/deployment.yml"
--'  26  53  ~/vpa/deployment.yml
-|4,39,26,53,1700639768,"~/vpa/deployment.yml"
--'  27  53  ~/vpa/deployment.yml
-|4,39,27,53,1700639768,"~/vpa/deployment.yml"
--'  26  53  ~/vpa/deployment.yml
-|4,39,26,53,1700639768,"~/vpa/deployment.yml"
--'  27  53  ~/vpa/deployment.yml
-|4,39,27,53,1700639768,"~/vpa/deployment.yml"
--'  26  53  ~/vpa/deployment.yml
-|4,39,26,53,1700639768,"~/vpa/deployment.yml"
--'  27  53  ~/vpa/deployment.yml
-|4,39,27,53,1700639768,"~/vpa/deployment.yml"
--'  26  53  ~/vpa/deployment.yml
-|4,39,26,53,1700639768,"~/vpa/deployment.yml"
--'  27  53  ~/vpa/deployment.yml
-|4,39,27,53,1700639768,"~/vpa/deployment.yml"
--'  27  53  ~/vpa/deployment.yml
-|4,39,27,53,1700639768,"~/vpa/deployment.yml"
--'  26  53  ~/vpa/deployment.yml
-|4,39,26,53,1700639768,"~/vpa/deployment.yml"
--'  27  53  ~/vpa/deployment.yml
-|4,39,27,53,1700639768,"~/vpa/deployment.yml"
--'  26  53  ~/vpa/deployment.yml
-|4,39,26,53,1700639768,"~/vpa/deployment.yml"
--'  27  53  ~/vpa/deployment.yml
-|4,39,27,53,1700639768,"~/vpa/deployment.yml"
--'  27  53  ~/vpa/deployment.yml
-|4,39,27,53,1700639768,"~/vpa/deployment.yml"
--'  26  53  ~/vpa/deployment.yml
-|4,39,26,53,1700639768,"~/vpa/deployment.yml"
--'  27  53  ~/vpa/deployment.yml
-|4,39,27,53,1700639768,"~/vpa/deployment.yml"
--'  26  53  ~/vpa/deployment.yml
-|4,39,26,53,1700639768,"~/vpa/deployment.yml"
--'  27  53  ~/vpa/deployment.yml
-|4,39,27,53,1700639768,"~/vpa/deployment.yml"
--'  27  53  ~/vpa/deployment.yml
-|4,39,27,53,1700639768,"~/vpa/deployment.yml"
--'  26  53  ~/vpa/deployment.yml
-|4,39,26,53,1700639768,"~/vpa/deployment.yml"
--'  27  53  ~/vpa/deployment.yml
-|4,39,27,53,1700639768,"~/vpa/deployment.yml"
--'  26  53  ~/vpa/deployment.yml
-|4,39,26,53,1700639768,"~/vpa/deployment.yml"
--'  27  53  ~/vpa/deployment.yml
-|4,39,27,53,1700639768,"~/vpa/deployment.yml"
--'  27  53  ~/vpa/deployment.yml
-|4,39,27,53,1700639768,"~/vpa/deployment.yml"
--'  26  53  ~/vpa/deployment.yml
-|4,39,26,53,1700639768,"~/vpa/deployment.yml"
+-'  6  25  ~/ingress/ingress.yaml
+|4,39,6,25,1701697180,"~/ingress/ingress.yaml"
+-'  6  24  ~/ingress/ingress.yaml
+|4,39,6,24,1701696162,"~/ingress/ingress.yaml"
+-'  6  24  ~/ingress/ingress.yaml
+|4,39,6,24,1701696141,"~/ingress/ingress.yaml"
+-'  27  23  ~/ingress/ingress.yaml
+|4,39,27,23,1701696117,"~/ingress/ingress.yaml"
+-'  27  23  ~/ingress/ingress.yaml
+|4,39,27,23,1701696117,"~/ingress/ingress.yaml"
+-'  27  23  ~/ingress/ingress.yaml
+|4,39,27,23,1701696117,"~/ingress/ingress.yaml"
+-'  26  23  ~/ingress/ingress.yaml
+|4,39,26,23,1701695168,"~/ingress/ingress.yaml"
+-'  26  23  ~/ingress/ingress.yaml
+|4,39,26,23,1701695168,"~/ingress/ingress.yaml"
+-'  26  23  ~/ingress/ingress.yaml
+|4,39,26,23,1701695168,"~/ingress/ingress.yaml"
+-'  18  21  ~/ingress/httpd-dep.yaml
+|4,39,18,21,1701694481,"~/ingress/httpd-dep.yaml"
+-'  18  21  ~/ingress/httpd-dep.yaml
+|4,39,18,21,1701694481,"~/ingress/httpd-dep.yaml"
+-'  18  21  ~/ingress/httpd-dep.yaml
+|4,39,18,21,1701694481,"~/ingress/httpd-dep.yaml"
+-'  18  21  ~/ingress/httpd-dep.yaml
+|4,39,18,21,1701694481,"~/ingress/httpd-dep.yaml"
+-'  18  21  ~/ingress/httpd-dep.yaml
+|4,39,18,21,1701694481,"~/ingress/httpd-dep.yaml"
+-'  18  21  ~/ingress/httpd-dep.yaml
+|4,39,18,21,1701694481,"~/ingress/httpd-dep.yaml"
+-'  18  21  ~/ingress/httpd-dep.yaml
+|4,39,18,21,1701694481,"~/ingress/httpd-dep.yaml"
+-'  18  21  ~/ingress/httpd-dep.yaml
+|4,39,18,21,1701694481,"~/ingress/httpd-dep.yaml"
+-'  18  21  ~/ingress/httpd-dep.yaml
+|4,39,18,21,1701694481,"~/ingress/httpd-dep.yaml"
+-'  18  21  ~/ingress/httpd-dep.yaml
+|4,39,18,21,1701694481,"~/ingress/httpd-dep.yaml"
+-'  18  21  ~/ingress/httpd-dep.yaml
+|4,39,18,21,1701694481,"~/ingress/httpd-dep.yaml"
+-'  18  21  ~/ingress/httpd-dep.yaml
+|4,39,18,21,1701694481,"~/ingress/httpd-dep.yaml"
+-'  18  21  ~/ingress/httpd-dep.yaml
+|4,39,18,21,1701694481,"~/ingress/httpd-dep.yaml"
+-'  18  21  ~/ingress/httpd-dep.yaml
+|4,39,18,21,1701694481,"~/ingress/httpd-dep.yaml"
+-'  18  21  ~/ingress/httpd-dep.yaml
+|4,39,18,21,1701694481,"~/ingress/httpd-dep.yaml"
+-'  18  21  ~/ingress/httpd-dep.yaml
+|4,39,18,21,1701694481,"~/ingress/httpd-dep.yaml"
+-'  4  12  ~/ingress/httpd-dep.yaml
+|4,39,4,12,1701694475,"~/ingress/httpd-dep.yaml"
+-'  4  12  ~/ingress/httpd-dep.yaml
+|4,39,4,12,1701694475,"~/ingress/httpd-dep.yaml"
+-'  4  12  ~/ingress/httpd-dep.yaml
+|4,39,4,12,1701694475,"~/ingress/httpd-dep.yaml"
+-'  4  12  ~/ingress/httpd-dep.yaml
+|4,39,4,12,1701694475,"~/ingress/httpd-dep.yaml"
+-'  4  12  ~/ingress/httpd-dep.yaml
+|4,39,4,12,1701694475,"~/ingress/httpd-dep.yaml"
+-'  4  12  ~/ingress/httpd-dep.yaml
+|4,39,4,12,1701694475,"~/ingress/httpd-dep.yaml"
+-'  4  12  ~/ingress/httpd-dep.yaml
+|4,39,4,12,1701694475,"~/ingress/httpd-dep.yaml"
+-'  4  12  ~/ingress/httpd-dep.yaml
+|4,39,4,12,1701694475,"~/ingress/httpd-dep.yaml"
+-'  4  12  ~/ingress/httpd-dep.yaml
+|4,39,4,12,1701694475,"~/ingress/httpd-dep.yaml"
+-'  4  12  ~/ingress/httpd-dep.yaml
+|4,39,4,12,1701694475,"~/ingress/httpd-dep.yaml"
+-'  4  12  ~/ingress/httpd-dep.yaml
+|4,39,4,12,1701694475,"~/ingress/httpd-dep.yaml"
+-'  4  12  ~/ingress/httpd-dep.yaml
+|4,39,4,12,1701694475,"~/ingress/httpd-dep.yaml"
+-'  4  12  ~/ingress/httpd-dep.yaml
+|4,39,4,12,1701694475,"~/ingress/httpd-dep.yaml"
+-'  4  12  ~/ingress/httpd-dep.yaml
+|4,39,4,12,1701694475,"~/ingress/httpd-dep.yaml"
+-'  4  12  ~/ingress/httpd-dep.yaml
+|4,39,4,12,1701694475,"~/ingress/httpd-dep.yaml"
+-'  4  12  ~/ingress/httpd-dep.yaml
+|4,39,4,12,1701694475,"~/ingress/httpd-dep.yaml"
+-'  26  23  ~/ingress/ingress.yaml
+|4,39,26,23,1701694437,"~/ingress/ingress.yaml"
+-'  26  23  ~/ingress/ingress.yaml
+|4,39,26,23,1701694437,"~/ingress/ingress.yaml"
+-'  26  23  ~/ingress/ingress.yaml
+|4,39,26,23,1701694424,"~/ingress/ingress.yaml"
+-'  26  23  ~/ingress/ingress.yaml
+|4,39,26,23,1701694424,"~/ingress/ingress.yaml"
+-'  8  17  ~/ingress/ingress.yaml
+|4,39,8,17,1701694390,"~/ingress/ingress.yaml"
+-'  7  17  ~/ingress/ingress.yaml
+|4,39,7,17,1701694390,"~/ingress/ingress.yaml"
+-'  8  17  ~/ingress/ingress.yaml
+|4,39,8,17,1701694390,"~/ingress/ingress.yaml"
+-'  7  17  ~/ingress/ingress.yaml
+|4,39,7,17,1701694390,"~/ingress/ingress.yaml"
+-'  8  17  ~/ingress/ingress.yaml
+|4,39,8,17,1701694390,"~/ingress/ingress.yaml"
+-'  7  17  ~/ingress/ingress.yaml
+|4,39,7,17,1701694390,"~/ingress/ingress.yaml"
+-'  7  17  ~/ingress/ingress.yaml
+|4,39,7,17,1701694390,"~/ingress/ingress.yaml"
+-'  7  17  ~/ingress/ingress.yaml
+|4,39,7,17,1701694390,"~/ingress/ingress.yaml"
+-'  7  17  ~/ingress/ingress.yaml
+|4,39,7,17,1701694390,"~/ingress/ingress.yaml"
+-'  7  17  ~/ingress/ingress.yaml
+|4,39,7,17,1701694390,"~/ingress/ingress.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
+-'  56  0  ~/ingress/deploy.yaml
+|4,39,56,0,1701693972,"~/ingress/deploy.yaml"
 
 # History of marks within files (newest to oldest):
+
+> ~/ingress/ingress.yaml
+	*	1701696271	0
+	"	6	25
+	^	6	25
+	.	6	24
+	+	27	25
+	+	4	10
+	+	5	0
+	+	7	0
+	+	7	8
+	+	7	29
+	+	8	20
+	+	8	30
+	+	8	23
+	+	7	0
+	+	8	31
+	+	8	30
+	+	8	20
+	+	8	30
+	+	8	23
+	+	8	30
+	+	15	29
+	+	17	23
+	+	18	17
+	+	8	17
+	+	25	29
+	+	27	23
+	+	8	17
+	+	8	0
+	+	6	24
+
+> ~/ingress/httpd-dep.yaml
+	*	1701694480	0
+	"	18	21
+	^	4	13
+	.	4	12
+	+	18	21
+	+	17	20
+	+	14	17
+	+	12	16
+	+	9	15
+	+	4	12
+
+> ~/ingress/deploy.yaml
+	*	1701693972	0
+	"	56	0
+
+> ~/ingress/deploy
+	*	1701693964	0
+	"	1	0
+
+> ~/nginxinc/kubernetes-ingress/deployments/deployment/nginx-ingress.yaml
+	*	1701693658	0
+	"	1	0
+
+> ~/haproxyingress/haproxy-ingress.yaml
+	*	1701693179	0
+	"	1	0
+
+> ~/nginxinc/kubernetes-ingress/deployments/common/nginx-config.yaml
+	*	1701692537	0
+	"	1	0
+
+> ~/nginxinc/kubernetes-ingress/deployments/service/loadbalancer.yaml
+	*	1701692518	0
+	"	19	0
+
+> ~/nginxinc/kubernetes-ingress/deployments/service/loadbalancer
+	*	1701692508	0
+	"	1	0
+
+> ~/nginxinc/kubernetes-ingress/deployments/service/loadbalancer-aws-elb.yaml
+	*	1701692424	0
+	"	1	0
+
+> /etc/fstab
+	*	1701688431	0
+	"	2	0
+	.	3	0
+	+	3	0
+
+> /nfs/index.html
+	*	1701688123	0
+	"	1	0
+	^	1	0
+	.	1	0
+	+	1	0
+
+> /tmp/kubectl-edit-3452664175.yaml
+	*	1701686163	0
+	"	132	18
+	^	132	19
+	.	132	18
+	+	132	18
+
+> /tmp/kubectl-edit-744000450.yaml
+	*	1701686031	0
+	"	170	19
+
+> ~/ingress/nginx-dep.yaml
+	*	1701681952	0
+	"	18	21
+	^	18	22
+	.	18	21
+	+	4	12
+	+	9	15
+	+	12	16
+	+	14	17
+	+	17	21
+	+	18	21
+
+> ~/ingress/prince-dep.yaml
+	*	1701681842	0
+	"	17	25
+	^	17	26
+	.	17	25
+	+	18	38
+	+	19	0
+	+	12	17
+	+	4	13
+	+	8	13
+	+	9	16
+	+	14	18
+	+	18	20
+	+	17	25
+
+> ~/ingress/deployment.yml
+	*	1701681754	0
+	"	16	12
+	^	16	13
+	.	6	12
+	+	19	0
+	+	18	42
+	+	19	0
+	+	12	21
+	+	4	14
+	+	6	12
+
+> /etc/ssh/sshd_config
+	*	1701678596	0
+	"	34	15
+	^	34	16
+	.	57	25
+	+	33	18
+	+	57	25
+
+> /rithik_WORK/daemon.yml
+	*	1701493689	0
+	"	3	0
+	^	3	1
+	.	3	1
+	+	3	1
+
+> /rithik_WORK/dep.yml
+	*	1701491999	0
+	"	17	14
+	^	17	15
+	.	17	0
+	+	21	4
+	+	20	0
+	+	4	14
+	+	19	8
+	+	15	13
+	+	18	27
+	+	17	0
+
+> ~/dep.yml
+	*	1701491092	0
+	"	1	0
+
+> ~/rs.yml
+	*	1701491044	0
+	"	19	16
+	^	19	17
+	.	19	16
+	+	23	7
+	+	7	15
+	+	22	0
+	+	9	26
+	+	21	13
+	+	13	21
+	+	20	0
+	+	19	0
+	+	18	0
+	+	19	25
+	+	6	4
+	+	1	16
+	+	17	23
+	+	18	15
+	+	19	16
+
+> /rithik_WORK/replicationcontroller.yml
+	*	1701489588	0
+	"	13	7
+	^	13	8
+	.	13	7
+	+	15	25
+	+	8	15
+	+	9	8
+	+	10	14
+	+	12	6
+	+	13	7
+
+> /rithik_WORK/replicaset.yml
+	*	1701489184	0
+	"	3	0
+	^	3	0
+	.	2	3
+	+	2	3
+
+> /rithik_WORK/svc.yml
+	*	1701488885	0
+	"	10	6
+	^	10	7
+	.	10	6
+	+	12	13
+	+	6	17
+	+	12	18
+	+	6	18
+	+	10	21
+	+	11	16
+	+	12	23
+	+	10	6
+
+> /rithik_WORK/pod.yml
+	*	1701488572	0
+	"	5	10
+	^	5	10
+	.	5	9
+	+	10	0
+	+	9	15
+	+	10	41
+	+	8	0
+	+	6	15
+	+	3	9
+	+	4	15
+	+	5	9
+
+> /rithik_WORK/pod.uml
+	*	1701488190	0
+	"	1	0
+
+> ~/.bashrc
+	*	1701455337	0
+	"	2	43
+	^	2	44
+	.	2	43
+	+	2	43
+
+> /etc/kubernetes/admin.conf
+	*	1701455254	0
+	"	5	4
+	.	20	0
+	+	12	0
+	+	20	0
+
+> ~/pod.yml
+	*	1701408205	0
+	"	7	12
+	^	7	13
+	.	7	12
+	+	9	11
+	+	5	6
+	+	5	55
+	+	5	96
+	+	5	50
+	+	5	20
+	+	5	5
+	+	5	18
+	+	6	2
+	+	6	37
+	+	7	12
+
+> ~/networkpolicy/pod3.yml
+	*	1701350899	0
+	"	7	14
+	^	7	15
+	.	7	14
+	+	10	23
+	+	1	18
+	+	11	23
+	+	1	12
+	+	5	18
+	+	6	2
+	+	7	14
+
+> ~/networkpolicy/networkpolicy.yml
+	*	1701350690	0
+	"	9	16
+	^	9	17
+	.	9	16
+	+	19	14
+	+	16	20
+	+	9	16
+	+	16	20
+	+	9	16
+
+> ~/networkpolicy/pod2.yml
+	*	1701350450	0
+	"	27	10
+	^	27	11
+	.	27	10
+	+	12	23
+	+	1	12
+	+	6	18
+	+	8	12
+	+	7	1
+	+	8	3
+	+	2	2
+	+	28	0
+	+	22	14
+	+	25	17
+	+	23	15
+	+	25	3
+	+	25	20
+	+	27	10
+
+> ~/networkpolicy/pod1.yml
+	*	1701350273	0
+	"	6	3
+	^	6	4
+	.	6	3
+	+	10	23
+	+	1	0
+	+	2	0
+	+	5	1
+	+	6	3
+
+> ~/networkpolicy/pod
+	*	1701349419	0
+	"	1	0
+
+> ~/dns/test-dns-pod.yml
+	*	1701329365	0
+	"	13	0
+	^	13	0
+	.	12	20
+	+	12	20
+
+> ~/dns/nginx-svc.yml
+	*	1701329270	0
+	"	11	20
+	^	11	21
+	.	11	20
+	+	12	17
+	+	9	25
+	+	12	15
+	+	9	6
+	+	9	4
+	+	9	20
+	+	11	20
+
+> ~/dns/nginx-deploy.yml
+	*	1701329122	0
+	"	20	0
+	^	20	0
+	.	19	27
+	+	19	27
+
+> ~/StorageClass/deployment.yml
+	*	1701263404	0
+	"	25	30
+	^	25	31
+	.	25	30
+	+	19	32
+	+	20	86
+	+	27	35
+	+	8	11
+	+	13	11
+	+	9	0
+	+	7	10
+	+	8	3
+	+	27	35
+	+	25	30
+
+> ~/StorageClass/pvc.yml
+	*	1701262685	0
+	"	10	3
+	^	10	4
+	.	9	11
+	+	8	27
+	+	11	17
+	+	9	11
+
+> ~/StorageClass/storageclass.yml
+	*	1701260014	0
+	"	8	38
+	^	8	39
+	.	8	38
+	+	8	38
+
+> ~/multicontainer.yml
+	*	1701252444	0
+	"	12	15
+	^	12	16
+	.	12	15
+	+	11	24
+	+	12	15
+
+> /tmp/kubectl-edit-4070849553.yaml
+	*	1701252318	0
+	"	18	12
+	^	18	13
+	.	18	12
+	+	18	12
+
+> ~/deployment.yml
+	*	1701252268	0
+	"	22	21
+	^	22	22
+	.	22	21
+	+	19	46
+	+	19	29
+	+	1	2
+	+	20	2
+	+	18	38
+	+	19	47
+	+	19	42
+	+	24	41
+	+	22	21
+
+> ~/deploy.yml
+	*	1701252224	0
+	"	8	6
+	^	14	47
+	.	5	4
+	+	18	0
+	+	5	34
+	+	5	57
+	+	5	77
+	+	5	101
+	+	5	24
+	+	5	41
+	+	5	64
+	+	5	79
+	+	5	5
+	+	14	48
+	+	14	75
+	+	14	99
+	+	14	127
+	+	5	18
+	+	14	94
+	+	14	28
+	+	15	0
+	+	5	4
+
+> ~/newpod.yml
+	*	1701242496	0
+	"	9	6
+	^	6	26
+	.	6	25
+	+	9	17
+	+	4	13
+	+	8	14
+	+	6	25
+
+> ~/USERRBAC/rolebinding.yml
+	*	1701242442	0
+	"	8	11
+	^	8	12
+	.	9	0
+	+	5	16
+	+	8	14
+	+	5	19
+	+	8	13
+	+	7	21
+	+	8	11
+	+	9	0
+
+> ~/USERRBAC/role.yml
+	*	1701242406	0
+	"	9	42
+	^	9	43
+	.	9	42
+	+	4	16
+	+	9	40
+	+	4	19
+	+	9	42
+
+> ~/.kube/config
+	*	1701235148	0
+	"	5	24
+	^	5	25
+	.	5	24
+	+	5	24
+
+> ~/rbac1/clusterrolebinding.yml
+	*	1701173791	0
+	"	7	12
+	^	7	13
+	.	7	12
+	+	7	12
+
+> ~/rbac1/clusterrole.yml
+	*	1701173740	0
+	"	6	0
+	^	6	0
+
+> ~/rbac1/clusterrole
+	*	1701173725	0
+	"	1	0
+
+> ~/pvpvc/deployment.yml
+	*	1701169534	0
+	"	39	20
+	^	39	21
+	.	39	20
+	+	16	28
+	+	27	9
+	+	26	27
+	+	22	45
+	+	1	2
+	+	39	20
+
+> ~/pvpvc/mypvc.yml
+	*	1701169201	0
+	"	10	18
+	^	10	19
+	.	10	18
+	+	10	17
+	+	7	18
+	+	10	18
+
+> ~/pvpvc/mypv.yml
+	*	1701169065	0
+	"	15	9
+	^	15	10
+	.	15	9
+	+	13	23
+	+	9	19
+	+	10	38
+	+	12	23
+	+	15	9
+
+> ~/pvpvc/db-pv.yml
+	*	1701158216	0
+	"	4	9
+	^	4	10
+	.	4	9
+	+	11	23
+	+	4	9
+
+> ~/USERRBAC/clusterrolebinding.yml
+	*	1701086500	0
+	"	13	0
+	^	13	0
+	.	12	37
+	+	1	40
+	+	12	37
+
+> ~/USERRBAC/clusterrole.yml
+	*	1701086356	0
+	"	9	0
+	^	9	0
+	.	8	33
+	+	1	40
+	+	8	33
+
+> ~/USERRBAC/clusterrole
+	*	1701084492	0
+	"	1	0
+
+> ~/rbac/clusterrolebinding.yml
+	*	1701080339	0
+	"	6	8
+	^	6	9
+	.	6	8
+	+	12	36
+	+	3	0
+	+	4	31
+	+	6	11
+	+	7	13
+	+	11	25
+	+	7	15
+	+	6	8
+
+> ~/rbac/role.yml
+	*	1701079748	0
+	"	11	20
+	^	11	21
+	.	10	21
+	+	9	33
+	+	12	32
+	+	11	25
+	+	10	21
+	+	4	18
+	+	5	17
+	+	10	21
+
+> ~/rbac/clusterrole.yml
+	*	1701079590	0
+	"	4	24
+	^	4	25
+	.	4	24
+	+	6	52
+	+	6	10
+	+	7	32
+	+	6	29
+	+	8	32
+	+	7	0
+	+	4	24
+
+> ~/rbac/rolebinding.yml
+	*	1701079428	0
+	"	13	1
+	^	13	2
+	.	13	1
+	+	12	55
+	+	1	40
+	+	2	0
+	+	4	8
+	+	4	24
+	+	5	18
+	+	7	0
+	+	8	13
+	+	11	12
+	+	12	19
+	+	13	1
+
+> ~/rbac/role
+	*	1701079085	0
+	"	1	0
+
+> ~/serviceaccount/pod.yml
+	*	1700744470	0
+	"	6	26
+	^	6	27
+	.	6	26
+	+	6	26
+
+> ~/serviceaccount/role-binding.yml
+	*	1700743978	0
+	"	11	39
+	^	11	40
+	.	11	40
+	+	11	81
+	+	4	26
+	+	11	12
+	+	11	40
+
+> ~/serviceaccount/role.yml
+	*	1700743925	0
+	"	4	8
+	^	4	9
+	.	4	0
+	+	8	32
+	+	4	0
+
+> ~/capi.yml
+	*	1700735031	0
+	"	11	14
+	^	11	15
+	.	11	14
+	+	1	14
+	+	1	34
+	+	11	14
+
+> /etc/kubernetes/pki/apiserver-kubelet-client.key
+	*	1700720560	0
+	"	1	0
 
 > ~/vpa/deployment.yml
 	*	1700644274	0
@@ -660,14 +1130,6 @@ $
 	.	555	0
 	+	555	0
 
-> ~/multicontainer.yml
-	*	1700293945	0
-	"	12	15
-	^	12	16
-	.	12	15
-	+	11	24
-	+	12	15
-
 > ~/wordpressproject/db.yml
 	*	1700292922	0
 	"	9	14
@@ -685,20 +1147,6 @@ $
 	.	11	16
 	+	3	9
 	+	11	16
-
-> ~/deployment.yml
-	*	1700292268	0
-	"	24	41
-	^	24	42
-	.	24	41
-	+	19	46
-	+	19	29
-	+	1	2
-	+	20	2
-	+	18	38
-	+	19	47
-	+	19	42
-	+	24	41
 
 > ~/mysecret.yml
 	*	1700291818	0
@@ -771,47 +1219,9 @@ $
 	+	12	20
 	+	8	8
 
-> ~/deploy.yml
-	*	1700140541	0
-	"	5	5
-	^	14	47
-	.	5	4
-	+	18	0
-	+	5	34
-	+	5	57
-	+	5	77
-	+	5	101
-	+	5	24
-	+	5	41
-	+	5	64
-	+	5	79
-	+	5	5
-	+	14	48
-	+	14	75
-	+	14	99
-	+	14	127
-	+	5	18
-	+	14	94
-	+	14	28
-	+	15	0
-	+	5	4
-
 > ~/daemonset.yml
 	*	1700140538	0
 	"	1	0
-
-> ~/pod.yml
-	*	1700139976	0
-	"	6	22
-	^	6	23
-	.	6	22
-	+	9	11
-	+	7	1
-	+	6	50
-	+	6	91
-	+	6	45
-	+	6	15
-	+	6	22
 
 > /etc/kubernetes/manifests/kube-
 	*	1700137779	0
@@ -838,13 +1248,6 @@ $
 > /etc/kubernetes/manifests/kube-scheduler.yaml
 	*	1700136100	0
 	"	1	0
-
-> ~/.bashrc
-	*	1700135897	0
-	"	2	43
-	^	2	44
-	.	2	43
-	+	2	43
 
 > /etc/containerd/config.toml
 	*	1700135396	0

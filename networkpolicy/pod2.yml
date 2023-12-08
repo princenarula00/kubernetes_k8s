@@ -1,0 +1,28 @@
+# nginx-pod-b.yaml
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-b
+  labels:
+    app: nginx2
+spec:
+  containers:
+  - name: nginx
+    image: nginx:alpine
+---
+
+# nginx-service-b.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service-b
+spec:
+  selector:
+    app: nginx2
+  type: NodePort
+  ports:
+    - targetPort: 80
+      port: 80
+      nodePort: 30080
+
